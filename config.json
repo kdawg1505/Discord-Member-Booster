@@ -1,12 +1,19 @@
 {
-    "captcha_key": "", 
-    "invite": "",
-    "threads": 69,
+    "captcha_key": solve_2cap(site_key,page_url):
+        _2captcha_api_key = config['captcha_key']
+        time_start = time.time()
+        url = "https://2captcha.com/in.php?key={}&method=hcaptcha&sitekey={}&pageurl={}".format(_2captcha_api_key,site_key,page_url)
+        response = httpx.get(url)
+        if response.text[0:2] == 'OK':
+            captcha_id = response.text[3:]
+            url = "http://2captcha.com/res.php?key={}&action=get&id={}".format(_2captcha_api_key,captcha_id)
+            response = httpx.get(url), 
+    "invite":discord.gg/kdawg,
     "proxy_scraper": "y",
 
     "online_tokens": "y",
 
     "join_voice": "n",
-    "channel_id": "",
-    "server_id": ""
-}
+    "channel_id":1285325179999879228,
+    "server_id":1280701612792217662,
+} 
